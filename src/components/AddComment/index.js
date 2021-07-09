@@ -16,9 +16,18 @@ function AddComment({ commentList, setCommentList }) {
   }
 
   function handleCommentList() {
-    setCommentList([...commentList ,{commentValue: newCommentValue, commentVote: newCommentVote}]);
-    setNewCommentValue('')
-    setNewCommentVote(0)
+    if(newCommentValue === "") {
+      alert("You have to comment")
+    }
+
+    else if(newCommentVote === 0) {
+      alert("Please vote")
+    }
+
+    else {
+      setCommentList([...commentList ,{commentValue: newCommentValue, commentVote: newCommentVote}]);
+      setNewCommentValue('')
+    }
   }
 
   return (
