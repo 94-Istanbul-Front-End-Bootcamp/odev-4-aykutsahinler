@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Odev-4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Kurallar
+* Başlangıçta hiç yorum yoktur ve bu durumda ekrana "Hiç yorum yok" çıktısı verilir.
+* Yıldız seviyesi 1-5 arasındadır ve başlangıçta oy durumunu tutan state numerik ve default değeri 0 olmalıdır.
+* Yeni bir yorum eklemeden önce yıldız verilmesi zorunludur. Aksi durumda "Yorum yapmadan önce oy vermelisiniz." gibi bir hata mesajı gösterilecektir.
+* Yorum alanı boş olamaz ve en az 3 karakter olmalıdır. Yorum inputu boş iken yorum yap butonu tıklanırsa "Boş olamaz" gibi bir hata mesajı gösterilmelidir. Yorum inputundaki karakter sayısı 3 karakterden az ise "Yorumunuz çok kısa" gibi bir hata mesajı verilmelidir.
+* İlgili validation'lar sağlandığında yorumları barındıran array tipindeki state içerisine, yeni yorum, object olarak eklenmelidir. 
+* Yorumları listelemek için farklı bir component oluşturulmalıdır.
+* Yorum ekle kısmındaki rating component, submit button ve text input farklı bir component'in içerisinde olmalıdır.
+* State App.js component'inde oluşturulmalı ve güncellenmelidir. Yani tüm aksiyon App.js üzerinden yönetilmelidir. Haliyle diğer component'ler props ile beslenmelidir.
+* App.js component'i class tipinde, diğer component'ler function tipinde olmalıdır.
+* Style konusunda her zamanki gibi özgürsünüz fakat ödevlerin kontrolünü zorlaştırmamak adına, yukarıda belirttiğim "star rating" haricinde bir package'ı projenize eklememenizi rica ederim.
 
 ## Available Scripts
 
@@ -38,33 +48,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
