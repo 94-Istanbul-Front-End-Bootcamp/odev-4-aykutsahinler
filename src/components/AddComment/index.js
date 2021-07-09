@@ -15,7 +15,7 @@ function AddComment({ commentList, setCommentList }) {
   }
 
   function handleCommentList() {
-    setCommentList([{commentValue: newCommentValue, commentVote: newCommentVote}, ...commentList]);
+    setCommentList([...commentList ,{commentValue: newCommentValue, commentVote: newCommentVote}]);
     setNewCommentValue('')
     setNewCommentVote(0)
   }

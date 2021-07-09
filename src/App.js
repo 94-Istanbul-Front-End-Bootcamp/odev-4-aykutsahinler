@@ -6,22 +6,12 @@ import AddComment from "./components/AddComment";
 import "./App.css";
 
 function App() {
-  const [commentList, setCommentList] = useState([
-    {
-      commentValue: "good",
-      commentVote: 5,
-    },
-    {
-      commentValue: "bad",
-      commentVote: 3,
-    },
-  ]);
-
+  const [commentList, setCommentList] = useState([]);
 
   return (
     <div className="app">
-      <Comment commentList={commentList}/> 
-      <AddComment commentList={commentList} setCommentList={setCommentList}/>
+      <Comment commentList={commentList} />
+      <AddComment commentList={commentList} setCommentList={setCommentList} />
     </div>
   );
 }
