@@ -1,4 +1,5 @@
 import ReactStars from "react-rating-stars-component";
+import "./style.css"
 
 const CommentListItem = ({ comment }) => {
   return (

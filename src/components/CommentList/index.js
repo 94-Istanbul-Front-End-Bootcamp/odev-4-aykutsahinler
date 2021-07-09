@@ -1,15 +1,19 @@
 import CommentListItem from "./CommentListItem";
+import "./style.css"
 
 const CommentList = ({ commentList }) => {
   return (
-    <div>
+    <div className="comment-container">
       <h1>Comments</h1>
 
       {commentList.length === 0 ? (
-        <p>Henüz yok</p>
+        <p>No comments yet</p>
       ) : (
         commentList.map((comment, index) => (
-          <CommentListItem key={index} comment={comment} />
+          <div className="comment-wrapper">
+            <CommentListItem className="comment" key={index} comment={comment} />
+            <hr/> <br/>
+          </div>
         ))
       )}
     </div>
