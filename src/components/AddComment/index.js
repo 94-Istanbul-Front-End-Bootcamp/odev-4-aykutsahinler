@@ -4,28 +4,21 @@ import ReactStars from "react-rating-stars-component";
 function AddComment({ commentList, setCommentList }) {
 
   const [newCommentValue, setNewCommentValue] = useState("");
+  const [newCommentVote, setNewCommentVote] = useState(0);
 
-  // const ratingChanged = (newRating) => {
-  //   setComment([(comment.vote = newRating), comment]);
-  //   console.log(comment.vote);
-  // };
+  const handleVote = (vote) => {
+    setNewCommentVote(vote);
+  };
 
   function handleNewComment(event) {
     setNewCommentValue(event.target.value);
   }
 
   function handleCommentList() {
-    setCommentList([{commentValue: newCommentValue}, ...commentList]);
+    setCommentList([{commentValue: newCommentValue, commentVote: newCommentVote}, ...commentList]);
+    setNewCommentValue('')
+    setNewCommentVote(0)
   }
-
-  // function add() {
-  //   if (comment.vote === 0) {
-  //     alert("yıldız bas");
-  //   } else if (comment.commentValue === "") {
-  //     alert("yorum boş olamaz");
-  //   }
-  //   console.log(comment);
-  // }
 
   return (
     <div>
@@ -37,12 +30,13 @@ function AddComment({ commentList, setCommentList }) {
         minLength="3"
       />
 
-      {/* <ReactStars
+      <ReactStars
         count={5}
-        onChange={ratingChanged}
+        value={newCommentVote}
         size={24}
         activeColor="#ffd700"
-      /> */}
+        onChange={handleVote}
+      />
 
       <button onClick={handleCommentList}>Comment!</button>
     </div>

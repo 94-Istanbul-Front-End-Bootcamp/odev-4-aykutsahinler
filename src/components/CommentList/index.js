@@ -1,14 +1,20 @@
-import React from "react";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
+import CommentListItem from "./CommentListItem";
 
-const CommentList = (props) => {
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+const CommentList = ({ commentList }) => {
+  // const ratingChanged = (newRating) => {
+  //   console.log(newRating);
+  // };
+
+  console.log("commentList: ", commentList);
 
   return (
     <div>
       <h1>Comments</h1>
+      {commentList &&
+        commentList.map((comment, index) => {
+          return <CommentListItem key={index} comment={comment}/>;
+        })}
       {/* <ReactStars
         count={5}
         onChange={ratingChanged}

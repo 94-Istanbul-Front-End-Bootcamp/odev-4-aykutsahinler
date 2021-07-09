@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Comment from "./components/Comment/index.js";
-import AddComment from "./components/AddComment/index.js";
+import Comment from "./components/CommentList";
+import AddComment from "./components/AddComment";
 
 import "./App.css";
 
@@ -9,18 +9,18 @@ function App() {
   const [commentList, setCommentList] = useState([
     {
       commentValue: "good",
-      vote: 5,
+      commentVote: 5,
     },
     {
       commentValue: "bad",
-      vote: 3,
+      commentVote: 3,
     },
   ]);
 
 
   return (
     <div className="app">
-      {/* <Comment comment={comment}/>  */}
+      <Comment commentList={commentList}/> 
       <AddComment commentList={commentList} setCommentList={setCommentList}/>
     </div>
   );
