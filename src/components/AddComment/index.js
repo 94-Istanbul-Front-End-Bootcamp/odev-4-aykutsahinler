@@ -1,50 +1,52 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 
-const AddComment = ({ comment, setComment }) => {
+function AddComment({ commentList, setCommentList }) {
 
-  const [newComment, setNewComment] = useState("");
+  const [newCommentValue, setNewCommentValue] = useState("");
 
-  useEffect(() => {
-    setNewComment("");
-  }, [comment]);
-
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+  // const ratingChanged = (newRating) => {
+  //   setComment([(comment.vote = newRating), comment]);
+  //   console.log(comment.vote);
+  // };
 
   function handleNewComment(event) {
-    setNewComment(event.target.value);
+    setNewCommentValue(event.target.value);
   }
 
-  function handleComment(event) {
-    event.preventDefault();
-    setComment([{ commentValue: newComment }, ...comment]);
+  function handleCommentList() {
+    setCommentList([{commentValue: newCommentValue}, ...commentList]);
   }
 
-  function add() {
-    console.log("ayktu");
-  }
+  // function add() {
+  //   if (comment.vote === 0) {
+  //     alert("yıldız bas");
+  //   } else if (comment.commentValue === "") {
+  //     alert("yorum boş olamaz");
+  //   }
+  //   console.log(comment);
+  // }
 
   return (
     <div>
       <h1>Yorum Ekle</h1>
       <input
+        value={newCommentValue}
         onChange={handleNewComment}
-        value={newComment}
-        onKeyPress={handleComment}
+        placeholder="Please enter comment"
+        minLength="3"
       />
-      <ReactStars
+
+      {/* <ReactStars
         count={5}
         onChange={ratingChanged}
         size={24}
         activeColor="#ffd700"
-      />
+      /> */}
 
-      <button onClick={add}>Yorum Yap</button>
+      <button onClick={handleCommentList}>Comment!</button>
     </div>
   );
-};
+}
 
 export default AddComment;
